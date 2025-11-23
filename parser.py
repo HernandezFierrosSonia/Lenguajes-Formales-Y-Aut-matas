@@ -52,11 +52,16 @@ def p_error(p):
 # Build the parser
 parser = yacc.yacc()
 
-while True:
-   try:
-       s = input('calc > ')
-   except EOFError:
-       break
-   if not s: continue
-   result = parser.parse(s)
-   print(result)
+#s es la cadena que se va a obtener de excel
+s="6-3+(4*sqrt(9))" #cadena de ejemplo
+result = parser.parse(s)
+print(result)
+
+#while True:
+#   try:
+#       s = input('calc > ')
+#   except EOFError:
+#       break
+#   if not s: continue
+#   result = parser.parse(s)
+#   print(result)
