@@ -24,7 +24,8 @@ t_TIMES   = r'\*'
 t_DIVIDE  = r'/'
 t_LPAREN  = r'\('
 t_RPAREN  = r'\)'
-t_SQRT = r'sqrt'
+t_SQRT = r'sqrt' #no queremos ninguna transformación, así que hay que usar atla cual sqrt
+#nota: \ se usa para escapar caracteres especiales, si quieres que coincidan con ellos mismos.
 
 # A regular expression rule with some action code
 def t_NUMBER(t):
@@ -49,17 +50,17 @@ def t_error(t):
 lexer = lex.lex()
 
 # Test it out
-data = '''
-3 + 4 * 10
-  + -78 *2
-'''
+#data = '''
+#3 + 4 * 10
+#  + -78 *2
+#'''
 
 # Give the lexer some input
-lexer.input(data)
+#lexer.input(data)
 
 # Tokenize
-while True:
-    tok = lexer.token()
-    if not tok: 
-        break      # No more input
-    print(tok)
+#while True:
+#    tok = lexer.token()
+#    if not tok: 
+#        break      # No more input
+#    print(tok)
