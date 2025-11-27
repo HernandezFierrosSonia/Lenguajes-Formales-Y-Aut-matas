@@ -45,6 +45,16 @@ def p_factor_sqrt(p):
     # Calcula la raíz cuadrada del valor de la expresión (p[3])
     p[0] = math.sqrt(p[3])
 
+def p_factor_abs(p):
+    'factor : ABS LPAREN expression RPAREN'
+    # Calcula el valor absoluto del valor de la expresión (p[3])
+    p[0] = abs(p[3])
+    
+def p_factor_exp(p):
+    'factor : EXP LPAREN expression RPAREN'
+    # Calcula la exponencia del valor de la expresión (p[3])
+    p[0] = math.exp(p[3])
+
 # Error rule for syntax errors
 def p_error(p):
     print("Syntax error in input!")
@@ -53,7 +63,7 @@ def p_error(p):
 parser = yacc.yacc()
 
 #s es la cadena que se va a obtener de excel
-s="6-3+(4*sqrt(9))" #cadena de ejemplo
+s="6-3+4*sqrt(9)*exp(1)-abs(2)" #cadena de ejemplo
 result = parser.parse(s)
 print(result)
 
