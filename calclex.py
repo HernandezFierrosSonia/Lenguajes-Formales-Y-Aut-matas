@@ -15,6 +15,8 @@ tokens = (
    'LPAREN', #paréntesis izquierdo
    'RPAREN', #paréntessi derecho
    'SQRT',
+   'EXP',
+   'ABS',
 )
 
 # Regular expression rules for simple tokens
@@ -26,6 +28,9 @@ t_LPAREN  = r'\('
 t_RPAREN  = r'\)'
 t_SQRT = r'sqrt' #no queremos ninguna transformación, así que hay que usar atla cual sqrt
 #nota: \ se usa para escapar caracteres especiales, si quieres que coincidan con ellos mismos.
+t_EXP = r'exp'
+t_ABS = r'abs'
+
 
 # A regular expression rule with some action code
 def t_NUMBER(t):
